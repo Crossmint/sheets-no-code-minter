@@ -121,7 +121,3 @@ A31: third.recipient@example.com
 - First-time users need to authorize the script
 - Click "Advanced" → "Go to [script name] (unsafe)" → "Allow"
 - This is a one-time setup per user
-
-
-
-[📖 **Documentation**](https://docs.crossmint.com) • [💬 **Discord Community**](https://discord.gg/crossmint) • [📧 **Support Email**](mailto:support@crossmint.com)
