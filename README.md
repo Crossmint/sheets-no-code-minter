@@ -85,10 +85,10 @@ A31: third.recipient@example.com
 
 #### 5. Start Minting
 
-• In your spreadsheet, click **Mint NFTs**
-• Monitor progress in real-time as the script processes each email
+• In your spreadsheet, click **Mint NFTs**  
+• Monitor progress in real-time as the script processes each email  
 • Check status updates in columns D (Order ID), E (Status)
-• Wait ~20 seconds for the transaction hash to show on column F and verify the mint on-chain.
+• Wait ~20 seconds for the transaction hash to show on column F and verify the mint on-chain. 
 
 
 ## Using in Production
