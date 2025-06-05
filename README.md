@@ -16,7 +16,9 @@
 
 Mint NFTs in less than 1 minute from Google Sheets using Crossmint's API with the [following demo](https://docs.google.com/spreadsheets/d/1HRgXotJTJ_ojE3RcgV9uzY0ya51YoSPDbEFarRPjMAc/edit?gid=0#gid=0).
 
-If you want to create your own collection of NFTs and mint to an unlimited number of users follow the steps from this quickstart and get it up and running in 10 minutes. Both the demo and the quickstart include: 
+If you want to create your own collection of NFTs and mint to an unlimited number of users follow the steps from this quickstart and get it up and running in 10 minutes.
+
+Both the demo and the quickstart include: 
 
 • Batch mint NFTs to multiple email addresses  
 • Dynamic NFT attributes configuration  
@@ -83,16 +85,16 @@ A31: third.recipient@example.com
 
 #### 5. Start Minting
 
-1. In your spreadsheet, click **Mint NFTs**
-2. Monitor progress in real-time as the script processes each email
-3. Check status updates in columns D (Order ID), E (Status)
-4. Wait ~20 seconds for the transaction hash to show on column F and verify the mint on-chain.
+• In your spreadsheet, click **Mint NFTs**
+• Monitor progress in real-time as the script processes each email
+• Check status updates in columns D (Order ID), E (Status)
+• Wait ~20 seconds for the transaction hash to show on column F and verify the mint on-chain.
 
 
 ## Using in Production
 
 
-1. Create an account in the [Crossmint Production Console](https://www.crossmint.com).
+1. Create an account in Crossmint's [production console](https://www.crossmint.com).
 2. Generate Server side API Keys with the same scopes used on staging.
 3. Configure your production collection.
 4. Update cell D16 with your production blockchain (e.g., "polygon" instead of "polygon-amoy")
