@@ -1,6 +1,6 @@
 <div align="center">
 
-![Crossmint Logo](https://tan-odd-galliform-276.mypinata.cloud/ipfs/bafkreiehkgtumzfwi4zkdnhanmth6vpejqa2lsxk3teuu25csyeelv42bu)
+<img src="https://tan-odd-galliform-276.mypinata.cloud/ipfs/bafkreiehkgtumzfwi4zkdnhanmth6vpejqa2lsxk3teuu25csyeelv42bu" alt="Crossmint Logo" width="200">
 
 # Crossmint NFT Minter for Google Sheets
 
@@ -14,114 +14,81 @@
 
 ## Introduction
 
-Mint NFTs directly from Google Sheets using Crossmint's API. This quickstart provides a seamless way to batch mint NFTs to multiple recipients using a simple spreadsheet interface with automated processing and transaction tracking.
+Mint NFTs in less than 1 minute from Google Sheets using Crossmint's API using [the following demo](https://docs.google.com/spreadsheets/d/1HRgXotJTJ_ojE3RcgV9uzY0ya51YoSPDbEFarRPjMAc/edit?gid=0#gid=0).
+
+If you want to create your own collection of NFTs and mint to an unlimited number of users follow the steps from this quickstart and get it up and running in 10 minutes.
 
 ### Key features:
 
 • **Batch mint NFTs** to multiple email addresses  
 • **Dynamic NFT attributes** configuration  
 • **Real-time minting status** tracking with transaction links  
-• **Automatic duplicate prevention**  
-• **Individual API calls** with optimized rate limiting (333ms intervals)  
-• **Built-in retry logic** for pending transactions  
 
 ---
 
 ## Prerequisites
 
 • Create a developer account in the [Staging Console](https://staging.crossmint.com).  
-• Create a [new collection](https://docs.crossmint.com/nft-checkout/collection-management) or [import yours](https://docs.crossmint.com/nft-checkout/collection-management) in the console, and have your `collectionId` ready.  
-• Make sure your collection has at least one NFT configured  
-• From the detail view of your collection, navigate to the Checkout tab to configure the pricing settings and enable Credit Card and Crypto payments.  
+• Create a new collection in your preferred blockchain and copy the `collectionId`.  
+• Go to Integatre > API Keys and generate a Server Side API Key with the `wallets.create`, `wallets.read`, `nfts.create` and `nfts.read` scopes.
 
 ---
 
 ## Deploy
 
-<div align="center">
+Easily deploy the template to Google Sheets with the button below. The scripts from this repo will be automatically included with the template.
 
-Easily deploy the template to Google Sheets with the button below. The Google Apps Script will be automatically included with the template.
-
-<a href="https://docs.google.com/spreadsheets/d/1HRgXotJTJ_ojE3RcgV9uzY0ya51YoSPDbEFarRPjMAc/copy">
+<a href="https://docs.google.com/spreadsheets/d/174WtEdkiDY1woPfUv0l_QdllaXUp0mWQj1-KTjsNhbQ/copy">
   <img src="https://img.shields.io/badge/Deploy%20to-Google%20Sheets-34A853?style=for-the-badge&logo=googlesheets&logoColor=white" alt="Deploy to Google Sheets">
 </a>
-
-</div>
-
-### Option 1: Make a Copy (Recommended)
-
-1. Open the [template spreadsheet](https://docs.google.com/spreadsheets/d/1HRgXotJTJ_ojE3RcgV9uzY0ya51YoSPDbEFarRPjMAc/edit?gid=0#gid=0)
-2. Click **"File"** → **"Make a copy"**
-3. The script will be automatically copied with the spreadsheet
-
-### Option 2: Manual Setup
-Set up the Google Apps Script manually by following the setup instructions from step 6.
 
 ---
 
 ## Setup
 
-### 1. Clone the repository and navigate to the project folder:
-
-```bash
-git clone https://github.com/jorge2393/sheets-no-code-minter.git
-cd sheets-no-code-minter
-```
-
-### 2. Configure Your NFT Collection
+### 1. Configure Your NFT Collection
 
 Open your copied spreadsheet and fill in the configuration:
 
-| Cell | Description | Example |
-|------|-------------|---------|
-| `D8` | Your Collection ID | `your-collection-id` |
-| `D10` | NFT Name | `"My Awesome NFT"` |
-| `D12` | NFT Description | `"Limited edition NFT"` |
-| `D14` | Image URL | `"https://example.com/image.png"` |
-| `D16` | Blockchain | `"polygon-amoy"` |
+```
+B3:  Your Crossmint API Key (server-side key)
+B4:  Your Collection ID
+B6:  NFT Name
+B7:  NFT Description
+B8:  Image URL
+B9:  Animation URL (optional)
+B11: Blockchain (e.g., polygon-amoy)
+```
 
-### 3. Set Up Your API Key
+### 2. Set Up NFT Attributes (Optional)
 
-1. Go to **Extensions** → **Apps Script**
-2. Click on the settings gear icon
-3. Add your server-side API key as a script property named `'API_KEY'`
-
-### 4. Set Up NFT Attributes (Optional)
-
-Configure dynamic attributes:
-
-| Cell | Attribute | Example Value |
-|------|-----------|---------------|
-| `D18` | Rarity | `"legendary"` |
-| `D20` | Size | `"large"` |
-
-### 5. Configure Optional Settings
-
-| Cell | Setting | Options |
-|------|---------|---------|
-| `D22` | Send Notification | `true/false` |
-
-### 6. Add Recipient Email Addresses
-
-Starting from row 30, add email addresses in column C:
+Configure dynamic attributes in rows 13-22:
 
 ```
-C30: first.recipient@example.com
-C31: second.recipient@example.com
-C32: third.recipient@example.com
+B13:C13: trait_type | value (e.g., "rarity" | "legendary")
+B14:C14: trait_type | value (e.g., "background" | "blue")
 ...
+B22:C22: trait_type | value
 ```
 
-### 7. Install Google Apps Script (Manual Setup Only)
+### 3. Configure Optional Settings
 
-If you didn't copy the template, manually set up the script:
+```
+B24: Send Notification (true/false) - Email notifications to recipients
+B25: Reupload Linked Files (true/false) - Reupload metadata files to IPFS
+```
 
-1. Open Google Apps Script: **Extensions** → **Apps Script**
-2. Copy the provided Google Apps Script code
-3. Save the project
-4. Set up your API key in script properties
+### 4. Add Recipient Email Addresses
 
-### 8. Start Minting
+Starting from row 29, add email addresses in column A:
+
+```
+A29: first.recipient@example.com
+A30: second.recipient@example.com
+A31: third.recipient@example.com
+...
+
+### 5. Start Minting
 
 1. In your spreadsheet, click **NFT Minting** → **Mint NFTs**
 2. Monitor progress in real-time as the script processes each email
@@ -135,42 +102,25 @@ If you didn't copy the template, manually set up the script:
 <strong>⚠️ Important:</strong> Always test with a small batch first in production
 </div>
 
-1. **Production Environment**: Create an account in the [Crossmint Production Console](https://www.crossmint.com)
-2. **API Keys**: Update your script properties with your production API key (contains "production" in the key)
-3. **Collection Setup**: Configure your production collection and verify it
-4. **Blockchain**: Update cell D16 with your production blockchain (e.g., "polygon" instead of "polygon-amoy")
 
----
+1. Create an account in the [Crossmint Production Console](https://www.crossmint.com).
+2. Generate Server side API Keys with the same scopes used on staging.
+3. Configure your production collection.
+4. Update cell D16 with your production blockchain (e.g., "polygon" instead of "polygon-amoy")
 
-## File Structure
-
-```
-crossmint-nft-minter/
-├── main.gs                    # Main minting orchestration
-├── config.gs                  # Configuration data handler
-├── emailHandler.gs            # Email data management
-├── responseHandler.gs         # API response processing
-├── sheetUtils.gs             # Spreadsheet utilities
-├── transactionTracker.gs     # Transaction ID fetching
-└── README.md                 # This file
-```
 
 ---
 
 ## Advanced Usage
 
-For advanced usage and customization, refer to the Crossmint documentation:
+For advanced usage, refer to the Crossmint documentation:
 
-<div align="center">
-
-| Resource | Description |
-|----------|-------------|
-| [📚 API Reference](https://docs.crossmint.com/api-reference) | Complete API documentation |
-| [🏗️ Collection Management](https://docs.crossmint.com/nft-checkout/collection-management) | Managing your NFT collections |
-| [⚙️ Blockchain Configuration](https://docs.crossmint.com/nft-checkout/blockchain-setup) | Blockchain setup guide |
-| [🐛 Error Handling](https://docs.crossmint.com/api-reference/common-errors) | Common errors and solutions |
-
-</div>
+• **Add Apple Pay**: [https://docs.crossmint.com/payments/embedded/guides/apple-pay](https://docs.crossmint.com/payments/embedded/guides/apple-pay)
+• **Customize the UI**: [https://docs.crossmint.com/payments/embedded/guides/ui-customization](https://docs.crossmint.com/payments/embedded/guides/ui-customization)
+• **Edit payment methods**: [https://docs.crossmint.com/payments/embedded/guides/payment-methods](https://docs.crossmint.com/payments/embedded/guides/payment-methods)
+• **API Reference**: [https://docs.crossmint.com/api-reference](https://docs.crossmint.com/api-reference)
+• **Collection Management**: [https://docs.crossmint.com/nft-checkout/collection-management](https://docs.crossmint.com/nft-checkout/collection-management)
+• **Error Handling**: [https://docs.crossmint.com/api-reference/common-errors](https://docs.crossmint.com/api-reference/common-errors)
 
 ---
 
@@ -181,13 +131,5 @@ For advanced usage and customization, refer to the Crossmint documentation:
 For support and questions:
 
 [📖 **Documentation**](https://docs.crossmint.com) • [💬 **Discord Community**](https://discord.gg/crossmint) • [📧 **Support Email**](mailto:support@crossmint.com)
-
-</div>
-
----
-
-<div align="center">
-
-**Made with ❤️ by [Crossmint](https://crossmint.com)**
 
 </div>
