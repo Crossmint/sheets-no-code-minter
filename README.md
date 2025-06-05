@@ -14,17 +14,16 @@
 
 ## Introduction
 
-Mint NFTs in less than 1 minute from Google Sheets using Crossmint's API using [the following demo](https://docs.google.com/spreadsheets/d/1HRgXotJTJ_ojE3RcgV9uzY0ya51YoSPDbEFarRPjMAc/edit?gid=0#gid=0).
+Mint NFTs in less than 1 minute from Google Sheets using Crossmint's API with the [following demo](https://docs.google.com/spreadsheets/d/1HRgXotJTJ_ojE3RcgV9uzY0ya51YoSPDbEFarRPjMAc/edit?gid=0#gid=0).
 
 If you want to create your own collection of NFTs and mint to an unlimited number of users follow the steps from this quickstart and get it up and running in 10 minutes.
 
 ### Key features:
 
-• **Batch mint NFTs** to multiple email addresses  
-• **Dynamic NFT attributes** configuration  
-• **Real-time minting status** tracking with transaction links  
+• Batch mint NFTs to multiple email addresses  
+• Dynamic NFT attributes configuration  
+• Real-time minting status tracking with transaction links  
 
----
 
 ## Prerequisites
 
@@ -32,7 +31,6 @@ If you want to create your own collection of NFTs and mint to an unlimited numbe
 • Create a new collection in your preferred blockchain and copy the `collectionId`.  
 • Go to Integatre > API Keys and generate a Server Side API Key with the `wallets.create`, `wallets.read`, `nfts.create` and `nfts.read` scopes.
 
----
 
 ## Deploy
 
@@ -42,7 +40,6 @@ Easily deploy the template to Google Sheets with the button below. The scripts f
   <img src="https://img.shields.io/badge/Deploy%20to-Google%20Sheets-34A853?style=for-the-badge&logo=googlesheets&logoColor=white" alt="Deploy to Google Sheets">
 </a>
 
----
 
 ## Setup
 
@@ -87,12 +84,14 @@ A29: first.recipient@example.com
 A30: second.recipient@example.com
 A31: third.recipient@example.com
 ...
+```
 
 ### 5. Start Minting
 
-1. In your spreadsheet, click **NFT Minting** → **Mint NFTs**
+1. In your spreadsheet, click **Mint NFTs**
 2. Monitor progress in real-time as the script processes each email
-3. Check status updates in columns D (Order ID), E (Status), and F (Transaction Hash)
+3. Check status updates in columns D (Order ID), E (Status)
+4. Wait ~20 seconds for the transaction hash to show on column F and verify the mint on-chain.
 
 ---
 
@@ -109,20 +108,32 @@ A31: third.recipient@example.com
 4. Update cell D16 with your production blockchain (e.g., "polygon" instead of "polygon-amoy")
 
 
----
-
 ## Advanced Usage
 
-For advanced usage, refer to the Crossmint documentation:
+For advanced usage and customization, refer to the Crossmint documentation:
 
-• **Add Apple Pay**: [https://docs.crossmint.com/payments/embedded/guides/apple-pay](https://docs.crossmint.com/payments/embedded/guides/apple-pay)
-• **Customize the UI**: [https://docs.crossmint.com/payments/embedded/guides/ui-customization](https://docs.crossmint.com/payments/embedded/guides/ui-customization)
-• **Edit payment methods**: [https://docs.crossmint.com/payments/embedded/guides/payment-methods](https://docs.crossmint.com/payments/embedded/guides/payment-methods)
-• **API Reference**: [https://docs.crossmint.com/api-reference](https://docs.crossmint.com/api-reference)
-• **Collection Management**: [https://docs.crossmint.com/nft-checkout/collection-management](https://docs.crossmint.com/nft-checkout/collection-management)
-• **Error Handling**: [https://docs.crossmint.com/api-reference/common-errors](https://docs.crossmint.com/api-reference/common-errors)
+* Mint API Reference: [https://docs.crossmint.com/api-reference/minting/nfts/mint-nft](https://docs.crossmint.com/api-reference/minting/nfts/mint-nft)
+* **Collection Management**: [https://docs.crossmint.com/nft-checkout/collection-management](#)
+* **Blockchain Configuration**: [https://docs.crossmint.com/nft-checkout/blockchain-setup](#)
 
----
+### Common Issues
+
+**"No emails to process"**
+- Ensure emails are in column A starting from row 29
+- Check that cells aren't empty or contain only spaces
+
+**"Failed to mint NFT"**
+- Verify your API key is correct and has minting permissions
+- Check that your collection ID exists and is properly configured
+
+**"Action still pending"**
+- This is normal for blockchain transactions
+- The script will retry up to 5 times with 5-second intervals
+
+**Script authorization required**
+- First-time users need to authorize the script
+- Click "Advanced" → "Go to [script name] (unsafe)" → "Allow"
+- This is a one-time setup per user
 
 ## Support
 
