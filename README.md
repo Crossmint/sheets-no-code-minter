@@ -16,9 +16,7 @@
 
 Mint NFTs in less than 1 minute from Google Sheets using Crossmint's API with the [following demo](https://docs.google.com/spreadsheets/d/1HRgXotJTJ_ojE3RcgV9uzY0ya51YoSPDbEFarRPjMAc/edit?gid=0#gid=0).
 
-If you want to create your own collection of NFTs and mint to an unlimited number of users follow the steps from this quickstart and get it up and running in 10 minutes.
-
-### Key features:
+If you want to create your own collection of NFTs and mint to an unlimited number of users follow the steps from this quickstart and get it up and running in 10 minutes. Both the demo and the quickstart include: 
 
 • Batch mint NFTs to multiple email addresses  
 • Dynamic NFT attributes configuration  
@@ -27,14 +25,15 @@ If you want to create your own collection of NFTs and mint to an unlimited numbe
 
 ## Prerequisites
 
-• Create a developer account in the [Staging Console](https://staging.crossmint.com).  
+• Create a developer account in Crossmint's [staging environment](https://staging.crossmint.com).  
 • Create a new collection in your preferred blockchain and copy the `collectionId`.  
-• Go to Integatre > API Keys and generate a Server Side API Key with the `wallets.create`, `wallets.read`, `nfts.create` and `nfts.read` scopes.
+• Navigate to "Integrate -> API Keys" and generate a Server Side API Key with the following scopes:
+     <div align="center">`wallets.create`, `wallets.read`, `nfts.create` & `nfts.read`</div>
 
 
 ## Deploy
 
-Easily deploy the template to Google Sheets with the button below. The scripts from this repo will be automatically included with the template.
+Easily create your own mint template on Google Sheets with the button below. The scripts from this repo will be automatically included in Google App Scripts and linked to the file:
 
 <a href="https://docs.google.com/spreadsheets/d/174WtEdkiDY1woPfUv0l_QdllaXUp0mWQj1-KTjsNhbQ/copy">
   <img src="https://img.shields.io/badge/Deploy%20to-Google%20Sheets-34A853?style=for-the-badge&logo=googlesheets&logoColor=white" alt="Deploy to Google Sheets">
@@ -43,7 +42,7 @@ Easily deploy the template to Google Sheets with the button below. The scripts f
 
 ## Setup
 
-### 1. Configure Your NFT Collection
+#### 1. Configure Your NFT Collection
 
 Open your copied spreadsheet and fill in the configuration:
 
@@ -57,9 +56,7 @@ B9:  Animation URL (optional)
 B11: Blockchain (e.g., polygon-amoy)
 ```
 
-### 2. Set Up NFT Attributes (Optional)
-
-Configure dynamic attributes in rows 13-22:
+#### 2. Set Up NFT Attributes (Optional)
 
 ```
 B13:C13: trait_type | value (e.g., "rarity" | "legendary")
@@ -68,16 +65,14 @@ B14:C14: trait_type | value (e.g., "background" | "blue")
 B22:C22: trait_type | value
 ```
 
-### 3. Configure Optional Settings
+#### 3. Configure Optional Settings
 
 ```
 B24: Send Notification (true/false) - Email notifications to recipients
 B25: Reupload Linked Files (true/false) - Reupload metadata files to IPFS
 ```
 
-### 4. Add Recipient Email Addresses
-
-Starting from row 29, add email addresses in column A:
+#### 4. Add Recipient Email Addresses
 
 ```
 A29: first.recipient@example.com
@@ -86,20 +81,15 @@ A31: third.recipient@example.com
 ...
 ```
 
-### 5. Start Minting
+#### 5. Start Minting
 
 1. In your spreadsheet, click **Mint NFTs**
 2. Monitor progress in real-time as the script processes each email
 3. Check status updates in columns D (Order ID), E (Status)
 4. Wait ~20 seconds for the transaction hash to show on column F and verify the mint on-chain.
 
----
 
 ## Using in Production
-
-<div style="background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 4px; padding: 12px; margin: 16px 0;">
-<strong>⚠️ Important:</strong> Always test with a small batch first in production
-</div>
 
 
 1. Create an account in the [Crossmint Production Console](https://www.crossmint.com).
@@ -107,40 +97,31 @@ A31: third.recipient@example.com
 3. Configure your production collection.
 4. Update cell D16 with your production blockchain (e.g., "polygon" instead of "polygon-amoy")
 
+<div style="background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 4px; padding: 12px; margin: 16px 0;">
+<strong>⚠️ Important:</strong> Always test with a small batch first in production
+</div>
 
-## Advanced Usage
 
-For advanced usage and customization, refer to the Crossmint documentation:
 
-* Mint API Reference: [https://docs.crossmint.com/api-reference/minting/nfts/mint-nft](https://docs.crossmint.com/api-reference/minting/nfts/mint-nft)
-* **Collection Management**: [https://docs.crossmint.com/nft-checkout/collection-management](#)
-* **Blockchain Configuration**: [https://docs.crossmint.com/nft-checkout/blockchain-setup](#)
+## Common Issues
 
-### Common Issues
-
-**"No emails to process"**
+*No emails to process*
 - Ensure emails are in column A starting from row 29
 - Check that cells aren't empty or contain only spaces
 
-**"Failed to mint NFT"**
+*Failed to mint NFT*
 - Verify your API key is correct and has minting permissions
 - Check that your collection ID exists and is properly configured
 
-**"Action still pending"**
+*Action still pending*
 - This is normal for blockchain transactions
 - The script will retry up to 5 times with 5-second intervals
 
-**Script authorization required**
+*Script authorization required*
 - First-time users need to authorize the script
 - Click "Advanced" → "Go to [script name] (unsafe)" → "Allow"
 - This is a one-time setup per user
 
-## Support
 
-<div align="center">
-
-For support and questions:
 
 [📖 **Documentation**](https://docs.crossmint.com) • [💬 **Discord Community**](https://discord.gg/crossmint) • [📧 **Support Email**](mailto:support@crossmint.com)
-
-</div>
