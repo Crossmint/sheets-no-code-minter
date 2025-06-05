@@ -28,7 +28,7 @@ If you want to create your own collection of NFTs and mint to an unlimited numbe
 • Create a developer account in Crossmint's [staging environment](https://staging.crossmint.com).  
 • Create a new collection in your preferred blockchain and copy the `collectionId`.  
 • Navigate to "Integrate -> API Keys" and generate a Server Side API Key with the following scopes:
-     <div align="center">`wallets.create`, `wallets.read`, `nfts.create` & `nfts.read`</div>
+     <div>`wallets.create`, `wallets.read`, `nfts.create` & `nfts.read`</div>
 
 
 ## Deploy
@@ -97,7 +97,7 @@ A31: third.recipient@example.com
 3. Configure your production collection.
 4. Update cell D16 with your production blockchain (e.g., "polygon" instead of "polygon-amoy")
 
-<div style="background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 4px; padding: 12px; margin: 16px 0;">
+<div align="center" style="background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 4px; padding: 12px; margin: 16px 0;">
 <strong>⚠️ Important:</strong> Always test with a small batch first in production
 </div>
 
