@@ -31,24 +31,19 @@ Both the demo and the quickstart include:
 • Create a [new collection](https://docs.crossmint.com/payments/guides/create-collection) and have your `collectionId` ready.  
 
 
-## Deploy
+## Setup
 
-Easily create your own mint template on Google Sheets with the button below. The scripts from this repo will be automatically included in Google App Scripts and linked to the file:
+#### 1. Copy the Spreadsheet template with the following button
 
 <a href="https://docs.google.com/spreadsheets/d/174WtEdkiDY1woPfUv0l_QdllaXUp0mWQj1-KTjsNhbQ/copy">
   <img src="https://img.shields.io/badge/Deploy%20to-Google%20Sheets-34A853?style=for-the-badge&logo=googlesheets&logoColor=white" alt="Deploy to Google Sheets">
 </a>
 
+#### 2. Get your server-side API key from the [Crossmint Console Overview](https://staging.crossmint.com/console/overview) and add it to the file.
 
-## Setup
+#### 3. Add your `collectionId`
 
-##### 1. Copy the Spreadsheet template with the button above
-
-##### 2. Get your server-side API key from the [Crossmint Console Overview](https://staging.crossmint.com/console/overview) and add it to the file.
-
-##### 3. Add your `collectionId`
-
-##### 4. Set up your token metadata
+#### 4. Set up your token metadata
 
 a. NFT name 
 b. Description  
@@ -57,27 +52,26 @@ d. Chain -> [list of supported chains](https://docs.crossmint.com/introduction/s
 e. Animation URL (optional)
 
 
-##### 5. Define the attributes of your NFT
+#### 5. Define the attributes of your NFT
 
 Add up to 10 attributes consisiting of a pair of attribute name and value. ie (Name= "Rarity", Value= "Ultra-rare")
 
-##### 6. Configure additinoal Settings
+#### 6. Configure additinoal Settings
 
 a. Send Notification (true/false) - Email notifications to recipients
 b. Reupload Linked Files (true/false) - Reupload metadata files to IPFS
 
 
-##### 7. Enter the recipients' email or wallet addresses in the "recipients" section.
+#### 7. Enter the recipients' email or wallet addresses in the "recipients" section.
 
 
-##### 8. Click "Mint NFTs" and start minting
+#### 8. Click "Mint NFTs" and start minting
 
 ## Using in Production
 
 
 1. Create an account in Crossmint's [production console](https://www.crossmint.com/signin?callbackUrl=/console).
-2. Generate Server side API Keys with the following scopes:
-     <div>`wallets.create`, `wallets.read`, `nfts.create` & `nfts.read`</div>
+2. Generate Server side API Keys with the following scopes: `wallets.create`, `wallets.read`, `nfts.create` & `nfts.read`.
 3. Create a new collection.
 4. Update the file with your production variables.
 4. Update cell D16 with your production blockchain (e.g., "polygon" instead of "polygon-amoy")
