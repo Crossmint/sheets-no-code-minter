@@ -73,7 +73,7 @@ Both the demo and the quickstart include:
 4. Update the file with your production variables.
 4. Update cell D16 with your production blockchain (e.g., "polygon" instead of "polygon-amoy")
 
-<div align="center" style="background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 4px; padding: 12px; margin: 16px 0;">
+<div style="background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 4px; padding: 12px; margin: 16px 0;">
 <strong>⚠️ Important:</strong> Always test with a small batch first in production
 </div>
 
@@ -92,8 +92,3 @@ Both the demo and the quickstart include:
 *Action still pending*
 - This is normal for blockchain transactions
 - The script will retry up to 5 times with 5-second intervals
-
-*Script authorization required*
-- First-time users need to authorize the script
-- Click "Advanced" → "Go to [script name] (unsafe)" → "Allow"
-- This is a one-time setup per user
