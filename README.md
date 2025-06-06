@@ -33,17 +33,17 @@ Both the demo and the quickstart include:
 
 ## Setup
 
-#### 1. Copy the Spreadsheet template with the following button
+1. Copy the Spreadsheet template with the following button
 
 <a href="https://docs.google.com/spreadsheets/d/174WtEdkiDY1woPfUv0l_QdllaXUp0mWQj1-KTjsNhbQ/copy">
   <img src="https://img.shields.io/badge/Deploy%20to-Google%20Sheets-34A853?style=for-the-badge&logo=googlesheets&logoColor=white" alt="Deploy to Google Sheets">
 </a>
 
-#### 2. Get your server-side API key from the [Crossmint Console Overview](https://staging.crossmint.com/console/overview) and add it to the file.
+2. Get your server-side API key from the [Crossmint Console Overview](https://staging.crossmint.com/console/overview) and add it to the file.
 
-#### 3. Add your `collectionId`
+3. Add your `collectionId`
 
-#### 4. Set up your token metadata
+4. Set up your token metadata
 
 a. NFT name 
 b. Description  
@@ -52,20 +52,20 @@ d. Chain -> [list of supported chains](https://docs.crossmint.com/introduction/s
 e. Animation URL (optional)
 
 
-#### 5. Define the attributes of your NFT
+5. Define the attributes of your NFT
 
 Add up to 10 attributes consisiting of a pair of attribute name and value. ie (Name= "Rarity", Value= "Ultra-rare")
 
-#### 6. Configure additinoal Settings
+6. Configure additinoal Settings
 
 a. Send Notification (true/false) - Email notifications to recipients
 b. Reupload Linked Files (true/false) - Reupload metadata files to IPFS
 
 
-#### 7. Enter the recipients' email or wallet addresses in the "recipients" section.
+7. Enter the recipients' email or wallet addresses in the "recipients" section.
 
 
-#### 8. Click "Mint NFTs" and start minting
+8. Click "Mint NFTs" and start minting
 
 ## Using in Production
 
