@@ -4,7 +4,7 @@
 
 # Crossmint NFT Minter for Google Sheets
 
-[Live Demo](https://docs.google.com/spreadsheets/d/1HRgXotJTJ_ojE3RcgV9uzY0ya51YoSPDbEFarRPjMAc/edit?gid=0#gid=0) | [Docs](https://docs.crossmint.com/minting/introduction) | [See all quickstarts](https://github.com/crossmint)
+[Live Demo](https://docs.google.com/spreadsheets/d/1HRgXotJTJ_ojE3RcgV9uzY0ya51YoSPDbEFarRPjMAc/edit?gid=0#gid=0) | [Docs](https://docs.crossmint.com/minting/introduction) | [See all quickstarts](https://www.crossmint.com/quickstarts)
 
 ![Crossmint Embedded Checkout](https://tan-odd-galliform-276.mypinata.cloud/ipfs/bafybeieizns63wosfik3rhorni5ghg2t3ctcorkjhdthcxndc6sjffxsxe)
 
@@ -27,79 +27,53 @@ Both the demo and the quickstart include:
 
 ## Prerequisites
 
-• Create a developer account in Crossmint's [staging environment](https://staging.crossmint.com).  
-• Create a new collection in your preferred blockchain and copy the `collectionId`.  
-• Navigate to "Integrate -> API Keys" and generate a Server Side API Key with the following scopes:
-     <div>`wallets.create`, `wallets.read`, `nfts.create` & `nfts.read`</div>
-
-
-## Deploy
-
-Easily create your own mint template on Google Sheets with the button below. The scripts from this repo will be automatically included in Google App Scripts and linked to the file:
-
-<a href="https://docs.google.com/spreadsheets/d/174WtEdkiDY1woPfUv0l_QdllaXUp0mWQj1-KTjsNhbQ/copy">
-  <img src="https://img.shields.io/badge/Deploy%20to-Google%20Sheets-34A853?style=for-the-badge&logo=googlesheets&logoColor=white" alt="Deploy to Google Sheets">
-</a>
+• Create a developer account in the [Staging Console](https://staging.crossmint.com).  
+• Create a [new collection](https://docs.crossmint.com/payments/guides/create-collection) and have your `collectionId` ready.  
 
 
 ## Setup
 
-#### 1. Configure Your NFT Collection
+1. Copy the Spreadsheet template with the following button
 
-Open your copied spreadsheet and fill in the configuration:
+   <a href="https://docs.google.com/spreadsheets/d/174WtEdkiDY1woPfUv0l_QdllaXUp0mWQj1-KTjsNhbQ/copy">
+     <img src="https://img.shields.io/badge/Deploy%20to-Google%20Sheets-34A853?style=for-the-badge&logo=googlesheets&logoColor=white" alt="Deploy to Google Sheets">
+   </a>
 
-```
-B3:  Your Crossmint API Key (server-side key)
-B4:  Your Collection ID
-B6:  NFT Name
-B7:  NFT Description
-B8:  Image URL
-B9:  Animation URL (optional)
-B11: Blockchain (e.g., polygon-amoy)
-```
+2. Get your server-side API key from the [Crossmint Console Overview](https://staging.crossmint.com/console/overview) and add it to the file.
 
-#### 2. Set Up NFT Attributes (Optional)
+3. Add your `collectionId`
 
-```
-B13:C13: trait_type | value (e.g., "rarity" | "legendary")
-B14:C14: trait_type | value (e.g., "background" | "blue")
-...
-B22:C22: trait_type | value
-```
+4. Set up your token metadata
 
-#### 3. Configure Optional Settings
+   a. NFT name  
+   b. Description  
+   c. Image URL  
+   d. Chain -> [list of supported chains](https://docs.crossmint.com/introduction/supported-chains)  
+   e. Animation URL (optional)
 
-```
-B24: Send Notification (true/false) - Email notifications to recipients
-B25: Reupload Linked Files (true/false) - Reupload metadata files to IPFS
-```
+5. Define the attributes of your NFT
 
-#### 4. Add Recipient Email Addresses
+   Add up to 10 attributes consisting of a pair of attribute name and value. ie (Name= "Rarity", Value= "Ultra-rare")
 
-```
-A29: first.recipient@example.com
-A30: second.recipient@example.com
-A31: third.recipient@example.com
-...
-```
+6. Configure additional Settings
 
-#### 5. Start Minting
+   a. Send Notification (true/false) - Email notifications to recipients  
+   b. Reupload Linked Files (true/false) - Reupload metadata files to IPFS
 
-• In your spreadsheet, click **Mint NFTs**  
-• Monitor progress in real-time as the script processes each email  
-• Check status updates in columns D (Order ID), E (Status)  
-• Wait ~20 seconds for the transaction hash to show on column F and verify the mint on-chain
+7. Enter the recipients' email or wallet addresses in the "recipients" section.
 
+8. Click "Mint NFTs" and start minting
 
 ## Using in Production
 
 
-1. Create an account in Crossmint's [production console](https://www.crossmint.com).
-2. Generate Server side API Keys with the same scopes used on staging.
-3. Configure your production collection.
+1. Create an account in Crossmint's [production console](https://www.crossmint.com/signin?callbackUrl=/console).
+2. Generate Server side API Keys with the following scopes: `wallets.create`, `wallets.read`, `nfts.create` & `nfts.read`.
+3. Create a new collection.
+4. Update the file with your production variables.
 4. Update cell D16 with your production blockchain (e.g., "polygon" instead of "polygon-amoy")
 
-<div align="center" style="background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 4px; padding: 12px; margin: 16px 0;">
+<div style="background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 4px; padding: 12px; margin: 16px 0;">
 <strong>⚠️ Important:</strong> Always test with a small batch first in production
 </div>
 
@@ -118,8 +92,3 @@ A31: third.recipient@example.com
 *Action still pending*
 - This is normal for blockchain transactions
 - The script will retry up to 5 times with 5-second intervals
-
-*Script authorization required*
-- First-time users need to authorize the script
-- Click "Advanced" → "Go to [script name] (unsafe)" → "Allow"
-- This is a one-time setup per user
